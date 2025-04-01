@@ -8,6 +8,7 @@ import {
   MoreHorizontal,
 } from "lucide-react";
 import FileManagerButtons from "./FileManagerButtons";
+import CourseSelection from "./CourseSelection";
 
 const tabs: string[] = [
   "Students",
@@ -22,25 +23,7 @@ const MainContent = ({ setActiveTab, activeTab }: MainContentProps) => {
   return (
     <main className="flex-1 ml-0 md:ml-64 lg:ml-72 p-4 md:p-6 overflow-y-auto h-[calc(100vh-4rem)]">
       {/* Course Selection */}
-      <div className="flex flex-col md:flex-row items-start md:items-center justify-between mb-4 space-y-3 md:space-y-0">
-        <div className="flex flex-col md:flex-row items-start md:items-center space-y-3 md:space-y-0 md:space-x-3 w-full md:w-auto">
-          <select className="border rounded-md px-3 py-2 text-sm text-gray-600 w-full md:w-auto">
-            <option>Course for Chemistry</option>
-          </select>
-          <select className="border rounded-md px-3 py-2 text-sm text-gray-600 w-full md:w-auto">
-            <option>All Batches</option>
-          </select>
-        </div>
-        <div className="flex items-center space-x-3 w-full md:w-auto">
-          <button className="bg-black text-white px-4 py-2 rounded-md text-sm w-full md:w-auto">
-            Take Class
-          </button>
-          <button className="flex items-center space-x-2 border rounded-md px-3 py-2 text-sm text-gray-600 w-full md:w-auto">
-            <div className="w-6 h-6 bg-gray-300 rounded-full"></div>
-            <span>Add TA</span>
-          </button>
-        </div>
-      </div>
+      <CourseSelection />
 
       {/* Tabs */}
       <div className="border-b">
@@ -66,7 +49,7 @@ const MainContent = ({ setActiveTab, activeTab }: MainContentProps) => {
 
       {/* Tab Content */}
       {activeTab === "Materials" && (
-        <div className="mt-6">
+        <div className="mt-6 bg-white p-4 rounded-md">
           {/* Breadcrumb */}
           <div className="flex items-center space-x-2 mb-4 flex-wrap">
             <span className="text-sm text-gray-600">Content</span>
