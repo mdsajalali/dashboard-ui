@@ -2,7 +2,7 @@ import { Book, ChevronDown } from "lucide-react";
 
 const CourseSelection = () => {
   return (
-    <div className="flex    flex-col md:flex-row items-start md:items-center justify-between mb-4 space-y-3 md:space-y-0">
+    <div className="flex    flex-col md:flex-row items-start md:items-center justify-between   space-y-3 md:space-y-0">
       <div className="flex flex-col md:flex-row items-start md:items-center space-y-3 md:space-y-0 md:space-x-3 w-full md:w-auto">
         <div className="relative w-full md:w-auto">
           <select className="cursor-pointer rounded-md px-3 pr-10 bg-white outline-0 border-0 py-2 text-sm text-black w-full appearance-none z-[9]">

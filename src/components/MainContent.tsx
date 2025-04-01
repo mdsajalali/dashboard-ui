@@ -9,6 +9,7 @@ import {
 } from "lucide-react";
 import FileManagerButtons from "./FileManagerButtons";
 import CourseSelection from "./CourseSelection";
+import ProgressBar from "./ProgressBar";
 
 const tabs: string[] = [
   "Students",
@@ -24,6 +25,9 @@ const MainContent = ({ setActiveTab, activeTab }: MainContentProps) => {
     <main className="flex-1 ml-0 md:ml-64 lg:ml-72 p-4 md:p-6 overflow-y-auto h-[calc(100vh-4rem)]">
       {/* Course Selection */}
       <CourseSelection />
+
+      {/* Progress Bar */}
+      <ProgressBar />
 
       {/* Tabs */}
       <div className="border-b">
