@@ -6,6 +6,8 @@ import {
   Eye,
   Info,
   MoreHorizontal,
+  Trash2,
+  Download,
 } from "lucide-react";
 import FileManagerButtons from "./FileManagerButtons";
 import CourseSelection from "./CourseSelection";
@@ -30,25 +32,29 @@ const MainContent = ({ setActiveTab, activeTab }: MainContentProps) => {
       <ProgressBar />
 
       {/* Tabs */}
-      <div className="border-b">
+      <div className="border-b flex items-center justify-between border-black/40 pt-4 px-4">
         <nav className="flex space-x-6 overflow-x-auto">
           {tabs.map((tab: string) => (
             <button
               key={tab}
               onClick={() => setActiveTab(tab)}
-              className={`pb-2 text-sm font-medium whitespace-nowrap ${
+              className={`pb-3 cursor-pointer text-sm font-medium whitespace-nowrap ${
                 activeTab === tab
-                  ? "text-blue-600 border-b-2 border-blue-600"
+                  ? "text-blue-600 border-b-4 border-blue-900"
                   : "text-gray-600"
               }`}
             >
               {tab}
             </button>
           ))}
-          <button className="pb-2">
-            <MoreHorizontal size={20} className="text-gray-600" />
+          <button className=" w-5 h-5 mt-1 cursor-pointer  border rounded-full">
+            <MoreHorizontal size={19} className="text-gray-600" />
           </button>
         </nav>
+        <div className="lg:flex hidden items-center gap-3 -mt-[10px">
+          <Trash2 size={20} className="text-gray-500 cursor-pointer hover:text-gray-600" />
+          <Download size={20} className="text-gray-500 cursor-pointer hover:text-gray-600" />
+        </div>
       </div>
 
       {/* Tab Content */}
