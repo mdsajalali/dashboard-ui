@@ -8,11 +8,11 @@ Explore the live project [here](https://dashbooard-ui.vercel.app/).
 
 ## Preview
 
-![Dashboard UI Desktop Preview](public/preview.png)  
 _Desktop view of the dashboard interface._
+![Dashboard UI Desktop Preview](public/preview.png)  
 
-![Dashboard UI Mobile Preview](public/mobile-preview.png)  
 _Mobile view showcasing responsive design._
+![Dashboard UI Mobile Preview](public/mobile-preview.png)  
 
 ## Features
 

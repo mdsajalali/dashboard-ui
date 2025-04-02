@@ -43,11 +43,11 @@ export default function FileDetails() {
           {files.map((file, index) => (
             <div
               key={index}
-              className={`grid grid-cols-1 sm:grid-cols-12 gap-4 ${
+              className={`grid grid-cols-1 xl:grid-cols-12 gap-4 ${
                 index !== files.length - 1 ? "border-b border-gray-200" : ""
               }`}
             >
-              <div className="col-span-12 sm:col-span-9  p-4  flex flex-col space-y-3">
+              <div className="col-span-12 xl:col-span-9  p-4  flex flex-col space-y-3">
                 <div className="flex items-center justify-between">
                   <div className="flex items-center space-x-3">
                     <input
@@ -95,14 +95,14 @@ export default function FileDetails() {
                     </div>
                   </div>
                 </div>
-                <div className="text-sm   mt-auto text-end">
+                <div className="text-sm   mt-auto xl:text-end text-center">
                   <p>
                     <span className="font-medium">Visible to:</span>{" "}
                     {file.visibility}
                   </p>
                 </div>
               </div>
-              <div className="col-span-12  p-4 sm:col-span-3 text-sm   space-y-1 lg:border-l-2 border-gray-300 sm:pl-5">
+              <div className="col-span-12  p-4 xl:col-span-3 text-sm   space-y-1 lg:border-l-2 border-gray-300 sm:pl-5">
                 <p>
                   <span className="font-medium">Created on:</span>{" "}
                   {file.created}
@@ -136,7 +136,7 @@ export default function FileDetails() {
             type="checkbox"
             className="h-5 w-5 text-blue-600 border-gray-300 rounded"
           />
-          <Folder className="h-10 w-10 text-gray-600" />
+          <Folder className="lg:h-10 h-8 lg:w-10 w-8 text-gray-600" />
           <span className="text-gray-800 font-medium ">
             Chapter 2 revision notes.pdf
           </span>
