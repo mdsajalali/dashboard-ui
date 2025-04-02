@@ -8,9 +8,9 @@ const Sidebar = ({
 }: SidebarProps) => {
   return (
     <aside
-      className={`bg-white shadow-md fixed inset-y-0 left-0 z-[99] w-64 md:w-72 transform ${
+      className={`bg-white shadow-md fixed inset-y-0 left-0 z-[99] w-64 lg:w-72 transform ${
         isSidebarOpen ? "translate-x-0" : "-translate-x-full"
-      } md:translate-x-0 transition-transform duration-300 ease-in-out pt-[60px] overflow-y-auto`}
+      } lg:translate-x-0 transition-transform duration-300 ease-in-out pt-[60px] overflow-y-auto`}
     >
       <div className="p-4">
         <div className="flex items-center justify-between space-x-2   ">

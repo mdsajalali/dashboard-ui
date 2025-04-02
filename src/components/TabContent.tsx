@@ -66,7 +66,7 @@ const TabContent = ({ activeTab }: { activeTab: string }) => {
                 <SquarePen size={19} className="  cursor-pointer" />
               </div>
               {/* Confirmation Modal */}
-              <ConfirmationModal textColor={true}/>
+              <ConfirmationModal textColor={true} />
               <div className="flex items-center cursor-pointer">
                 <svg
                   width="20"
@@ -182,7 +182,7 @@ const TabContent = ({ activeTab }: { activeTab: string }) => {
                     </p>
                   </div>
                 </div>
-                <div className="flex items-center space-x-2 flex-wrap gap-2">
+                <div className="flex items-center space-x-2   gap-2">
                   <button className="p-1 lg:block hidden">
                     <Info size={16} className="text-gray-600 cursor-pointer" />
                   </button>

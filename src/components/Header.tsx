@@ -4,6 +4,7 @@ import { useState, useEffect, useRef } from "react";
 import { HeaderProps } from "@/types/main.types";
 import { Menu, X, Users, Bell } from "lucide-react";
 import Image from "next/image";
+import Link from "next/link";
 
 const Header = ({ setIsSidebarOpen, isSidebarOpen }: HeaderProps) => {
   const [isProfileOpen, setIsProfileOpen] = useState<boolean>(false);
@@ -34,14 +35,17 @@ const Header = ({ setIsSidebarOpen, isSidebarOpen }: HeaderProps) => {
     <header className="bg-white border-b border-gray-300 z-[999] flex items-center justify-between px-4 py-3 h-16 fixed top-0 left-0 right-0 sm:px-6 md:px-8 lg:px-10">
       <div className="flex items-center space-x-3">
         <button
-          className="md:hidden p-1"
+          className="lg:hidden p-1"
           onClick={() => setIsSidebarOpen(!isSidebarOpen)}
         >
           {isSidebarOpen ? <X size={24} /> : <Menu size={24} />}
         </button>
-        <h1 className="text-base sm:text-lg font-semibold text-gray-800 truncate">
+        <Link
+          href="/"
+          className="text-base cursor-pointer sm:text-lg font-semibold text-gray-800 truncate"
+        >
           Teacher‘s Center
-        </h1>
+        </Link>
       </div>
 
       <div className="flex items-center space-x-2 sm:space-x-3">

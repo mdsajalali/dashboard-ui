@@ -16,7 +16,7 @@ const tabs: string[] = [
 
 const MainContent = ({ setActiveTab, activeTab }: MainContentProps) => {
   return (
-    <main className="flex-1 ml-0 md:ml-64 lg:ml-72 p-4 md:p-6 overflow-y-auto h-[calc(100vh-4rem)]">
+    <main className="flex-1 ml-0  lg:ml-72 p-4 md:p-6 overflow-y-auto h-[calc(100vh-4rem)]">
       {/* Course Selection */}
       <CourseSelection />
 
