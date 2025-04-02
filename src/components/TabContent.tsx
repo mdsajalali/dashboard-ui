@@ -1,5 +1,4 @@
 import {
-  Folder,
   FileText,
   Eye,
   Info,
@@ -8,6 +7,9 @@ import {
   MoreHorizontal,
   SquarePen,
   Trash2,
+  ArrowLeft,
+  ChevronRight,
+  ChevronDown,
 } from "lucide-react";
 import FileManagerButtons from "./FileManagerButtons";
 import { useState } from "react";
@@ -23,11 +25,11 @@ const TabContent = ({ activeTab }: { activeTab: string }) => {
         <div className="mt-6 bg-white p-4 rounded-md">
           {/* Breadcrumb */}
           <div className="flex border-b border-black/40 items-center justify-between space-x-2 mb-4   gap-5">
-            <div className="flex items-center gap-10">
+            <div className="flex items-center gap-4 lg:gap-10">
               {breadcrumbItems.map((item) => (
                 <button
                   key={item}
-                  className={`text-[16px] px-2   pb-3   border-b-2 ${
+                  className={`text-[16px] px-2 cursor-pointer   pb-3   border-b-2 ${
                     breadcrumb === item
                       ? "border-black  border-b-4 font-semibold"
                       : "border-transparent text-gray-600"
@@ -37,7 +39,7 @@ const TabContent = ({ activeTab }: { activeTab: string }) => {
                   {item}
                 </button>
               ))}
-              <div className="lg:flex hidden -mt-2 items-center gap-2">
+              <div className="lg:flex hidden -mt-2 cursor-pointer items-center gap-2">
                 <div className="bg-black p-[2px] rounded-full text-white">
                   <Plus size={16} />
                 </div>
@@ -123,7 +125,8 @@ const TabContent = ({ activeTab }: { activeTab: string }) => {
                   />
                 </svg>
               </div>
-              <svg className="cursor-pointer"
+              <svg
+                className="cursor-pointer"
                 width="20"
                 height="20"
                 viewBox="0 0 24 24"
@@ -159,24 +162,56 @@ const TabContent = ({ activeTab }: { activeTab: string }) => {
             <>
               {/* Folder and File List */}
               <div className="flex flex-col md:flex-row items-start md:items-center justify-between mb-4 space-y-3 md:space-y-0">
-                <div className="flex items-center space-x-2">
-                  <input type="checkbox" className="h-4 w-4 text-blue-600" />
-                  <Folder size={20} className="text-gray-600" />
-                  <span className="text-sm text-gray-800">Chapter 1.1</span>
+                <div className="flex   items-center space-x-2">
+                  <button className="p-2 rounded-full  bg-black cursor-pointer">
+                    <ArrowLeft size={20} className="text-white" />
+                  </button>
+                  <span className="text-[16px] font-medium underline cursor-pointer text-gray-800">
+                    Chapter
+                  </span>
+                  <ChevronRight size={22} className="cursor-pointer" />
+                  <span className="text-[16px] font-medium underline cursor-pointer text-gray-800">
+                    Chapter 1.1
+                  </span>
+                  <ChevronRight size={22} className="cursor-pointer" />
+                  <div className="bg-gray-100 hidden lg:flex items-center gap-2 px-4 py-2 rounded-md">
+                    <input type="checkbox" className="mt-1" />
+                    <p className="text-[16px] font-bold    text-gray-800">
+                      Chapter 1
+                    </p>
+                  </div>
                 </div>
                 <div className="flex items-center space-x-2 flex-wrap gap-2">
-                  <button className="p-1">
-                    <Info size={16} className="text-gray-600" />
+                  <button className="p-1 lg:block hidden">
+                    <Info size={16} className="text-gray-600 cursor-pointer" />
                   </button>
-                  <button className="p-1">
-                    <Eye size={16} className="text-gray-600" />
-                  </button>
-                  <select className="border rounded-md px-2 py-1 text-sm text-gray-600">
-                    <option>Access to</option>
-                  </select>
-                  <select className="border rounded-md px-2 py-1 text-sm text-gray-600">
-                    <option>Actions</option>
-                  </select>
+
+                  <div className="relative w-full md:w-auto">
+                    <Eye className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-600 w-4 h-4" />
+
+                    <select className="border-0 outline-0 bg-gray-100 cursor-pointer rounded-md pl-10 pr-10 py-2 text-sm text-black w-full appearance-none z-[9]">
+                      <option>Access to</option>
+                      <option>View Only</option>
+                      <option>Delete</option>
+                      <option>Update</option>
+                      <option>Active</option>
+                      <option>Disable</option>
+                    </select>
+
+                    {/* Chevron Down Icon Positioned on the Right */}
+                    <ChevronDown className="absolute right-3 top-1/2 -translate-y-1/2 text-gray-500 w-4 h-4 pointer-events-none" />
+                  </div>
+
+                  <div className="relative w-full md:w-auto">
+                    <select className="border-0 outline-0 bg-gray-100 cursor-pointer rounded-md px-3 pr-10 py-2 text-sm text-black w-full appearance-none z-[9]">
+                      <option>Actions</option>
+                      <option>Delete</option>
+                      <option>Update</option>
+                      <option>Active</option>
+                      <option>Disable</option>
+                    </select>
+                    <ChevronDown className="absolute right-3 top-1/2 -translate-y-1/2 text-gray-500 w-4 h-4 pointer-events-none" />
+                  </div>
                 </div>
               </div>
               {/* File Details */}
