@@ -1,5 +1,4 @@
 import {
-  FileText,
   Eye,
   Info,
   Plus,
@@ -13,6 +12,7 @@ import {
 } from "lucide-react";
 import FileManagerButtons from "./FileManagerButtons";
 import { useState } from "react";
+import FileDetails from "./FileDetails";
 
 const TabContent = ({ activeTab }: { activeTab: string }) => {
   const [breadcrumb, setBreadcrumb] = useState("Content");
@@ -215,41 +215,7 @@ const TabContent = ({ activeTab }: { activeTab: string }) => {
                 </div>
               </div>
               {/* File Details */}
-              <div className="flex flex-col md:flex-row items-start md:items-center justify-between mb-4 border p-4 rounded-md space-y-3 md:space-y-0">
-                <div className="flex items-center space-x-2">
-                  <input type="checkbox" className="h-4 w-4 text-blue-600" />
-                  <FileText size={20} className="text-gray-600" />
-                  <span className="text-sm text-gray-800">
-                    Chapter 2 revision notes.pdf
-                  </span>
-                </div>
-                <div className="text-sm text-gray-600">
-                  <p>Created on: 25/02/2025 10:35 pm</p>
-                  <p>Created by: Sir</p>
-                  <p>Last Modified: Friday, 25/02/2025, 10:35 pm</p>
-                  <p>Last Modified by: Sir</p>
-                  <p>Kind: PDF Document</p>
-                  <p>Size: 23 MB</p>
-                  <p className="text-xs text-gray-500">
-                    Visible to Batch 1, Batch 2, Batch 3. For both online &
-                    physical students
-                  </p>
-                </div>
-                <div className="flex items-center space-x-2 flex-wrap gap-2">
-                  <button className="p-1">
-                    <Info size={16} className="text-gray-600" />
-                  </button>
-                  <button className="p-1">
-                    <Eye size={16} className="text-gray-600" />
-                  </button>
-                  <select className="border rounded-md px-2 py-1 text-sm text-gray-600">
-                    <option>Access to</option>
-                  </select>
-                  <select className="border rounded-md px-2 py-1 text-sm text-gray-600">
-                    <option>Actions</option>
-                  </select>
-                </div>
-              </div>
+              <FileDetails />
             </>
           )}
 
@@ -273,7 +239,9 @@ const TabContent = ({ activeTab }: { activeTab: string }) => {
             </div>
           )}
           {/* File Manager Buttons */}
-          <FileManagerButtons />
+          <div className="lg:border-x lg:border-b mx-4  border-gray-300">
+            <FileManagerButtons />
+          </div>
         </div>
       )}
     </>
