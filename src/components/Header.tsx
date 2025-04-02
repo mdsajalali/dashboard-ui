@@ -32,30 +32,30 @@ const Header = ({ setIsSidebarOpen, isSidebarOpen }: HeaderProps) => {
   }, [isProfileOpen]);
 
   return (
-    <header className="bg-white border-b border-gray-300 z-[999] flex items-center justify-between px-4 py-3 h-16 fixed top-0 left-0 right-0 sm:px-6 md:px-8 lg:px-10">
+    <header className="fixed top-0 right-0 left-0 z-[999] flex h-16 items-center justify-between border-b border-gray-300 bg-white px-4 py-3 sm:px-6 md:px-8 lg:px-10">
       <div className="flex items-center space-x-3">
         <button
-          className="lg:hidden p-1"
+          className="p-1 lg:hidden"
           onClick={() => setIsSidebarOpen(!isSidebarOpen)}
         >
           {isSidebarOpen ? <X size={24} /> : <Menu size={24} />}
         </button>
         <Link
           href="/"
-          className="text-base cursor-pointer sm:text-lg font-semibold text-gray-800 truncate"
+          className="cursor-pointer truncate text-base font-semibold text-gray-800 sm:text-lg"
         >
           Teacher‘s Center
         </Link>
       </div>
 
       <div className="flex items-center space-x-2 sm:space-x-3">
-        <button className="p-2 rounded-full cursor-pointer hover:bg-gray-100 hidden sm:block">
+        <button className="hidden cursor-pointer rounded-full p-2 hover:bg-gray-100 sm:block">
           <Users size={18} className="text-gray-600" />
         </button>
-        <button className="p-2 rounded-full cursor-pointer hover:bg-gray-100 hidden sm:block">
+        <button className="hidden cursor-pointer rounded-full p-2 hover:bg-gray-100 sm:block">
           <Bell size={18} className="text-gray-600" />
         </button>
-        <div className="border-l h-8 sm:h-10 pl-2 hidden md:block"></div>
+        <div className="hidden h-8 border-l pl-2 sm:h-10 md:block"></div>
 
         <div className="relative flex items-center space-x-2 sm:space-x-3">
           <Image
@@ -63,10 +63,10 @@ const Header = ({ setIsSidebarOpen, isSidebarOpen }: HeaderProps) => {
             alt="User"
             width={36}
             height={36}
-            className="size-9 sm:size-10 rounded-full cursor-pointer"
+            className="size-9 cursor-pointer rounded-full sm:size-10"
             onClick={toggleProfile}
           />
-          <span className="text-xs sm:text-sm font-medium text-gray-800 hidden md:block">
+          <span className="hidden text-xs font-medium text-gray-800 sm:text-sm md:block">
             Sir 1 <br />
             <span className="font-normal text-black">Chemistry | Level 3</span>
           </span>
@@ -74,10 +74,10 @@ const Header = ({ setIsSidebarOpen, isSidebarOpen }: HeaderProps) => {
           {isProfileOpen && (
             <div
               ref={profileRef}
-              className="absolute top-12 right-0 bg-white rounded-lg shadow-lg w-56 sm:w-64 p-3 sm:p-4 border border-gray-200 z-50 max-h-[calc(100vh-4rem)] overflow-y-auto"
+              className="absolute top-12 right-0 z-50 max-h-[calc(100vh-4rem)] w-56 overflow-y-auto rounded-lg border border-gray-200 bg-white p-3 shadow-lg sm:w-64 sm:p-4"
             >
               <div className="flex flex-col items-start space-y-3">
-                <div className="flex items-center space-x-3 w-full">
+                <div className="flex w-full items-center space-x-3">
                   <Image
                     src="https://img.freepik.com/free-vector/smiling-young-man-illustration_1308-174669.jpg"
                     alt="User"
@@ -85,11 +85,11 @@ const Header = ({ setIsSidebarOpen, isSidebarOpen }: HeaderProps) => {
                     height={36}
                     className="size-9 rounded-full"
                   />
-                  <div className="flex-1 min-w-0">
-                    <p className="text-xs sm:text-sm font-medium text-gray-800 truncate">
+                  <div className="min-w-0 flex-1">
+                    <p className="truncate text-xs font-medium text-gray-800 sm:text-sm">
                       Sir 1
                     </p>
-                    <p className="text-xs text-gray-600 truncate">
+                    <p className="truncate text-xs text-gray-600">
                       Chemistry | Level 3
                     </p>
                   </div>
@@ -97,13 +97,13 @@ const Header = ({ setIsSidebarOpen, isSidebarOpen }: HeaderProps) => {
 
                 <div className="w-full border-t border-gray-200"></div>
 
-                <button className="text-xs sm:text-sm cursor-pointer text-gray-700 hover:text-gray-900 w-full text-left truncate">
+                <button className="w-full cursor-pointer truncate text-left text-xs text-gray-700 hover:text-gray-900 sm:text-sm">
                   Profile Settings
                 </button>
-                <button className="text-xs sm:text-sm cursor-pointer text-gray-700 hover:text-gray-900 w-full text-left truncate">
+                <button className="w-full cursor-pointer truncate text-left text-xs text-gray-700 hover:text-gray-900 sm:text-sm">
                   Account
                 </button>
-                <button className="text-xs sm:text-sm cursor-pointer text-red-600 hover:text-red-800 w-full text-left truncate">
+                <button className="w-full cursor-pointer truncate text-left text-xs text-red-600 hover:text-red-800 sm:text-sm">
                   Logout
                 </button>
               </div>

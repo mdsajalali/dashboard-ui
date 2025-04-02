@@ -15,7 +15,7 @@ const Dashboard = () => {
   const [isSidebarOpen, setIsSidebarOpen] = useState<boolean>(false);
 
   return (
-    <div className="min-h-screen bg-gray-100 font-sans flex flex-col">
+    <div className="flex min-h-screen flex-col bg-gray-100 font-sans">
       {/* Header */}
       <Header
         isSidebarOpen={isSidebarOpen}

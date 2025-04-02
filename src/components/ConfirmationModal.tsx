@@ -3,7 +3,7 @@
 import { useState, useEffect, useRef } from "react";
 import { Trash2, X } from "lucide-react";
 
-const ConfirmationModal = ({ textColor }: { textColor?: boolean}) => {
+const ConfirmationModal = ({ textColor }: { textColor?: boolean }) => {
   const [isOpen, setIsOpen] = useState<boolean>(false);
   const modalRef = useRef<HTMLDivElement>(null);
 
@@ -33,7 +33,7 @@ const ConfirmationModal = ({ textColor }: { textColor?: boolean}) => {
     <>
       <button
         onClick={handleOpen}
-        className="p-1 rounded-full   transition-colors duration-200"
+        className="rounded-full p-1 transition-colors duration-200"
       >
         <Trash2
           size={20}
@@ -44,37 +44,37 @@ const ConfirmationModal = ({ textColor }: { textColor?: boolean}) => {
       </button>
 
       {isOpen && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/60 backdrop-blur-sm transition-opacity duration-300">
+        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/60 p-4 backdrop-blur-sm transition-opacity duration-300">
           <div
             ref={modalRef}
-            className="bg-white rounded-xl shadow-2xl w-full max-w-md mx-auto transform transition-all duration-300 scale-100"
+            className="mx-auto w-full max-w-md scale-100 transform rounded-xl bg-white shadow-2xl transition-all duration-300"
           >
-            <div className="flex justify-between items-center p-5 border-b border-gray-200">
+            <div className="flex items-center justify-between border-b border-gray-200 p-5">
               <h2 className="text-xl font-semibold text-gray-900">
                 Confirm Deletion
               </h2>
               <button
                 onClick={handleClose}
-                className="p-1 rounded-full hover:bg-gray-100 transition-colors duration-200"
+                className="rounded-full p-1 transition-colors duration-200 hover:bg-gray-100"
               >
                 <X
                   size={20}
-                  className="text-gray-500 cursor-pointer hover:text-gray-700 transition-colors"
+                  className="cursor-pointer text-gray-500 transition-colors hover:text-gray-700"
                 />
               </button>
             </div>
 
             <div className="p-5">
-              <p className="text-gray-600 leading-relaxed">
+              <p className="leading-relaxed text-gray-600">
                 Are you sure you want to delete this item? This action is
                 permanent and cannot be undone.
               </p>
             </div>
 
-            <div className="flex justify-end space-x-3 p-5 border-t border-gray-200 bg-gray-50 rounded-b-xl">
+            <div className="flex justify-end space-x-3 rounded-b-xl border-t border-gray-200 bg-gray-50 p-5">
               <button
                 onClick={handleClose}
-                className="px-4 py-2 text-gray-700 bg-white border border-gray-300 rounded-lg hover:bg-gray-100 transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-gray-200"
+                className="rounded-lg border border-gray-300 bg-white px-4 py-2 text-gray-700 transition-colors duration-200 hover:bg-gray-100 focus:ring-2 focus:ring-gray-200 focus:outline-none"
               >
                 Cancel
               </button>
@@ -82,7 +82,7 @@ const ConfirmationModal = ({ textColor }: { textColor?: boolean}) => {
                 onClick={() => {
                   handleClose();
                 }}
-                className="px-4 py-2 text-white bg-red-600 rounded-lg hover:bg-red-700 transition-colors duration-200 focus:outline-none focus:ring-2 focus:ring-red-300"
+                className="rounded-lg bg-red-600 px-4 py-2 text-white transition-colors duration-200 hover:bg-red-700 focus:ring-2 focus:ring-red-300 focus:outline-none"
               >
                 Delete
               </button>

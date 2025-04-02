@@ -22,16 +22,16 @@ const TabContent = ({ activeTab }: { activeTab: string }) => {
   return (
     <>
       {activeTab === "Materials" && (
-        <div className="mt-6 bg-white p-4 rounded-md">
+        <div className="mt-6 rounded-md bg-white p-4">
           {/* Breadcrumb */}
-          <div className="flex border-b border-black/40 items-center justify-between space-x-2 mb-4   gap-5">
+          <div className="mb-4 flex items-center justify-between gap-5 space-x-2 border-b border-black/40">
             <div className="flex items-center gap-4 lg:gap-10">
               {breadcrumbItems.map((item) => (
                 <button
                   key={item}
-                  className={`text-[16px] px-2 cursor-pointer   pb-3   border-b-2 ${
+                  className={`cursor-pointer border-b-2 px-2 pb-3 text-[16px] ${
                     breadcrumb === item
-                      ? "border-black  border-b-4 font-semibold"
+                      ? "border-b-4 border-black font-semibold"
                       : "border-transparent text-gray-600"
                   }`}
                   onClick={() => setBreadcrumb(item)}
@@ -39,35 +39,35 @@ const TabContent = ({ activeTab }: { activeTab: string }) => {
                   {item}
                 </button>
               ))}
-              <div className="lg:flex hidden -mt-2 cursor-pointer items-center gap-2">
-                <div className="bg-black p-[2px] rounded-full text-white">
+              <div className="-mt-2 hidden cursor-pointer items-center gap-2 lg:flex">
+                <div className="rounded-full bg-black p-[2px] text-white">
                   <Plus size={16} />
                 </div>
-                <h2 className="text-[14px] italic text-gray-400">
+                <h2 className="text-[14px] text-gray-400 italic">
                   Add main Folder
                 </h2>
               </div>
             </div>
-            <div className="lg:flex items-center hidden gap-5">
-              <div className="relative ">
+            <div className="hidden items-center gap-5 lg:flex">
+              <div className="relative">
                 <input
                   type="text"
-                  className="pl-6 w-36 text-sm  border outline-0   rounded-lg   focus:outline-none    "
+                  className="w-36 rounded-lg border pl-6 text-sm outline-0 focus:outline-none"
                 />
                 <Search
                   size={16}
-                  className="absolute left-1 top-1/2 transform -translate-y-1/2  "
+                  className="absolute top-1/2 left-1 -translate-y-1/2 transform"
                 />
               </div>
               <div className="flex items-center gap-2">
-                <button className=" w-5 h-5  cursor-pointer  border rounded-full">
+                <button className="h-5 w-5 cursor-pointer rounded-full border">
                   <MoreHorizontal size={19} className="text-gray-600" />
                 </button>
-                <SquarePen size={19} className="  cursor-pointer" />
+                <SquarePen size={19} className="cursor-pointer" />
               </div>
               {/* Confirmation Modal */}
               <ConfirmationModal textColor={true} />
-              <div className="flex items-center cursor-pointer">
+              <div className="flex cursor-pointer items-center">
                 <svg
                   width="20"
                   height="20"
@@ -78,22 +78,22 @@ const TabContent = ({ activeTab }: { activeTab: string }) => {
                   <path
                     d="M12 3L12 21"
                     stroke="black"
-                    stroke-width="2"
-                    stroke-linecap="round"
+                    strokeWidth="2"
+                    strokeLinecap="round"
                   />
                   <path
                     d="M8 7L12 3L16 7"
                     stroke="black"
-                    stroke-width="2"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
+                    strokeWidth="2"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
                   />
                   <path
                     d="M8 17L12 21L16 17"
                     stroke="black"
-                    stroke-width="2"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
+                    strokeWidth="2"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
                   />
                 </svg>
                 <svg
@@ -107,22 +107,22 @@ const TabContent = ({ activeTab }: { activeTab: string }) => {
                   <path
                     d="M12 3L12 21"
                     stroke="black"
-                    stroke-width="2"
-                    stroke-linecap="round"
+                    strokeWidth="2"
+                    strokeLinecap="round"
                   />
                   <path
                     d="M8 7L12 3L16 7"
                     stroke="black"
-                    stroke-width="2"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
+                    strokeWidth="2"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
                   />
                   <path
                     d="M8 17L12 21L16 17"
                     stroke="black"
-                    stroke-width="2"
-                    stroke-linecap="round"
-                    stroke-linejoin="round"
+                    strokeWidth="2"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
                   />
                 </svg>
               </div>
@@ -140,20 +140,20 @@ const TabContent = ({ activeTab }: { activeTab: string }) => {
                 <path
                   d="M6 6H20"
                   stroke="black"
-                  stroke-width="2"
-                  stroke-linecap="round"
+                  strokeWidth="2"
+                  strokeLinecap="round"
                 />
                 <path
                   d="M6 12H20"
                   stroke="black"
-                  stroke-width="2"
-                  stroke-linecap="round"
+                  strokeWidth="2"
+                  strokeLinecap="round"
                 />
                 <path
                   d="M6 18H20"
                   stroke="black"
-                  stroke-width="2"
-                  stroke-linecap="round"
+                  strokeWidth="2"
+                  strokeLinecap="round"
                 />
               </svg>
             </div>
@@ -162,35 +162,35 @@ const TabContent = ({ activeTab }: { activeTab: string }) => {
           {breadcrumb === "Content" && (
             <>
               {/* Folder and File List */}
-              <div className="flex flex-col md:flex-row items-start md:items-center justify-between mb-4 space-y-3 md:space-y-0">
-                <div className="flex   items-center space-x-2">
-                  <button className="p-2 rounded-full  bg-black cursor-pointer">
+              <div className="mb-4 flex flex-col items-start justify-between space-y-3 md:flex-row md:items-center md:space-y-0">
+                <div className="flex items-center space-x-2">
+                  <button className="cursor-pointer rounded-full bg-black p-2">
                     <ArrowLeft size={20} className="text-white" />
                   </button>
-                  <span className="text-[16px] font-medium underline cursor-pointer text-gray-800">
+                  <span className="cursor-pointer text-[16px] font-medium text-gray-800 underline">
                     Chapter
                   </span>
                   <ChevronRight size={22} className="cursor-pointer" />
-                  <span className="text-[16px] font-medium underline cursor-pointer text-gray-800">
+                  <span className="cursor-pointer text-[16px] font-medium text-gray-800 underline">
                     Chapter 1.1
                   </span>
                   <ChevronRight size={22} className="cursor-pointer" />
-                  <div className="bg-gray-100 hidden lg:flex items-center gap-2 px-4 py-2 rounded-md">
+                  <div className="hidden items-center gap-2 rounded-md bg-gray-100 px-4 py-2 lg:flex">
                     <input type="checkbox" className="mt-1" />
-                    <p className="text-[16px] font-bold    text-gray-800">
+                    <p className="text-[16px] font-bold text-gray-800">
                       Chapter 1
                     </p>
                   </div>
                 </div>
-                <div className="flex items-center space-x-2   gap-2">
-                  <button className="p-1 lg:block hidden">
-                    <Info size={16} className="text-gray-600 cursor-pointer" />
+                <div className="flex items-center gap-2 space-x-2">
+                  <button className="hidden p-1 lg:block">
+                    <Info size={16} className="cursor-pointer text-gray-600" />
                   </button>
 
                   <div className="relative w-full md:w-auto">
-                    <Eye className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-600 w-4 h-4" />
+                    <Eye className="absolute top-1/2 left-3 h-4 w-4 -translate-y-1/2 text-gray-600" />
 
-                    <select className="border-0 outline-0 bg-gray-100 cursor-pointer rounded-md pl-10 pr-10 py-2 text-sm text-black w-full appearance-none z-[9]">
+                    <select className="z-[9] w-full cursor-pointer appearance-none rounded-md border-0 bg-gray-100 py-2 pr-10 pl-10 text-sm text-black outline-0">
                       <option>Access to</option>
                       <option>View Only</option>
                       <option>Delete</option>
@@ -200,18 +200,18 @@ const TabContent = ({ activeTab }: { activeTab: string }) => {
                     </select>
 
                     {/* Chevron Down Icon Positioned on the Right */}
-                    <ChevronDown className="absolute right-3 top-1/2 -translate-y-1/2 text-gray-500 w-4 h-4 pointer-events-none" />
+                    <ChevronDown className="pointer-events-none absolute top-1/2 right-3 h-4 w-4 -translate-y-1/2 text-gray-500" />
                   </div>
 
                   <div className="relative w-full md:w-auto">
-                    <select className="border-0 outline-0 bg-gray-100 cursor-pointer rounded-md px-3 pr-10 py-2 text-sm text-black w-full appearance-none z-[9]">
+                    <select className="z-[9] w-full cursor-pointer appearance-none rounded-md border-0 bg-gray-100 px-3 py-2 pr-10 text-sm text-black outline-0">
                       <option>Actions</option>
                       <option>Delete</option>
                       <option>Update</option>
                       <option>Active</option>
                       <option>Disable</option>
                     </select>
-                    <ChevronDown className="absolute right-3 top-1/2 -translate-y-1/2 text-gray-500 w-4 h-4 pointer-events-none" />
+                    <ChevronDown className="pointer-events-none absolute top-1/2 right-3 h-4 w-4 -translate-y-1/2 text-gray-500" />
                   </div>
                 </div>
               </div>
@@ -225,7 +225,7 @@ const TabContent = ({ activeTab }: { activeTab: string }) => {
               <h2 className="text-lg font-semibold text-gray-800">
                 Course Details
               </h2>
-              <p className="text-sm text-gray-600 mt-2">
+              <p className="mt-2 text-sm text-gray-600">
                 Content for Course Details will go here.
               </p>
             </div>
@@ -234,13 +234,13 @@ const TabContent = ({ activeTab }: { activeTab: string }) => {
           {breadcrumb === "Revision" && (
             <div className="my-6">
               <h2 className="text-lg font-semibold text-gray-800">Revision</h2>
-              <p className="text-sm text-gray-600 mt-2">
+              <p className="mt-2 text-sm text-gray-600">
                 Content for Revision will go here.
               </p>
             </div>
           )}
           {/* File Manager Buttons */}
-          <div className="lg:border-x lg:border-b mx-4  border-gray-300">
+          <div className="mx-4 border-gray-300 lg:border-x lg:border-b">
             <FileManagerButtons />
           </div>
         </div>

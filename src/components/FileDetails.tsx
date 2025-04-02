@@ -39,41 +39,41 @@ export default function FileDetails() {
   return (
     <div className="px-2 lg:px-4">
       <div className="flex items-center justify-center">
-        <div className="w-full   border border-gray-300">
+        <div className="w-full border border-gray-300">
           {files.map((file, index) => (
             <div
               key={index}
-              className={`grid grid-cols-1 xl:grid-cols-12 gap-4 ${
+              className={`grid grid-cols-1 gap-4 xl:grid-cols-12 ${
                 index !== files.length - 1 ? "border-b border-gray-200" : ""
               }`}
             >
-              <div className="col-span-12 xl:col-span-9  p-4  flex flex-col space-y-3">
+              <div className="col-span-12 flex flex-col space-y-3 p-4 xl:col-span-9">
                 <div className="flex items-center justify-between">
                   <div className="flex items-center space-x-3">
                     <input
                       type="checkbox"
-                      className="h-5 w-5 text-blue-600 border-gray-300 rounded"
+                      className="h-5 w-5 rounded border-gray-300 text-blue-600"
                     />
                     {file.type === "folder" ? (
                       <Folder className="h-6 w-6 text-gray-600" />
                     ) : (
                       <FileText className="h-6 w-6 text-gray-600" />
                     )}
-                    <span className="text-gray-800 font-medium underline">
+                    <span className="font-medium text-gray-800 underline">
                       {file.name}
                     </span>
                     <ChevronUp />
                   </div>
-                  <div className="lg:flex hidden items-center space-x-2">
-                    <button className="p-1 hidden lg:block">
+                  <div className="hidden items-center space-x-2 lg:flex">
+                    <button className="hidden p-1 lg:block">
                       <BadgeInfo
                         size={20}
-                        className="text-gray-600 cursor-pointer"
+                        className="cursor-pointer text-gray-600"
                       />
                     </button>
                     <div className="relative w-full md:w-auto">
-                      <Eye className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-600 w-4 h-4" />
-                      <select className="border-0 outline-0 bg-gray-100 cursor-pointer rounded-md pl-10 pr-10 py-2 text-sm text-black w-full appearance-none">
+                      <Eye className="absolute top-1/2 left-3 h-4 w-4 -translate-y-1/2 text-gray-600" />
+                      <select className="w-full cursor-pointer appearance-none rounded-md border-0 bg-gray-100 py-2 pr-10 pl-10 text-sm text-black outline-0">
                         <option>Access to</option>
                         <option>View Only</option>
                         <option>Delete</option>
@@ -81,28 +81,28 @@ export default function FileDetails() {
                         <option>Active</option>
                         <option>Disable</option>
                       </select>
-                      <ChevronDown className="absolute right-3 top-1/2 -translate-y-1/2 text-gray-500 w-4 h-4 pointer-events-none" />
+                      <ChevronDown className="pointer-events-none absolute top-1/2 right-3 h-4 w-4 -translate-y-1/2 text-gray-500" />
                     </div>
                     <div className="relative w-full md:w-auto">
-                      <select className="border-0 outline-0 bg-gray-100 cursor-pointer rounded-md px-3 pr-10 py-2 text-sm text-black w-full appearance-none">
+                      <select className="w-full cursor-pointer appearance-none rounded-md border-0 bg-gray-100 px-3 py-2 pr-10 text-sm text-black outline-0">
                         <option>Actions</option>
                         <option>Delete</option>
                         <option>Update</option>
                         <option>Active</option>
                         <option>Disable</option>
                       </select>
-                      <ChevronDown className="absolute right-3 top-1/2 -translate-y-1/2 text-gray-500 w-4 h-4 pointer-events-none" />
+                      <ChevronDown className="pointer-events-none absolute top-1/2 right-3 h-4 w-4 -translate-y-1/2 text-gray-500" />
                     </div>
                   </div>
                 </div>
-                <div className="text-sm   mt-auto xl:text-end text-center">
+                <div className="mt-auto text-center text-sm xl:text-end">
                   <p>
                     <span className="font-medium">Visible to:</span>{" "}
                     {file.visibility}
                   </p>
                 </div>
               </div>
-              <div className="col-span-12  p-4 xl:col-span-3 text-sm   space-y-1 lg:border-l-2 border-gray-300 sm:pl-5">
+              <div className="col-span-12 space-y-1 border-gray-300 p-4 text-sm sm:pl-5 lg:border-l-2 xl:col-span-3">
                 <p>
                   <span className="font-medium">Created on:</span>{" "}
                   {file.created}
@@ -130,26 +130,26 @@ export default function FileDetails() {
           ))}
         </div>
       </div>
-      <div className="flex items-center justify-between space-x-2 flex-wrap gap-2 w-full  border-x border-b  border-gray-300 p-4">
+      <div className="flex w-full flex-wrap items-center justify-between gap-2 space-x-2 border-x border-b border-gray-300 p-4">
         <div className="flex items-center gap-2">
           <input
             type="checkbox"
-            className="h-5 w-5 text-blue-600 border-gray-300 rounded"
+            className="h-5 w-5 rounded border-gray-300 text-blue-600"
           />
-          <Folder className="lg:h-10 h-8 lg:w-10 w-8 text-gray-600" />
-          <span className="text-gray-800 font-medium ">
+          <Folder className="h-8 w-8 text-gray-600 lg:h-10 lg:w-10" />
+          <span className="font-medium text-gray-800">
             Chapter 2 revision notes.pdf
           </span>
         </div>
         <div className="flex items-center gap-2">
-          <button className="p-1 lg:block hidden">
-            <Info size={16} className="text-gray-600 cursor-pointer" />
+          <button className="hidden p-1 lg:block">
+            <Info size={16} className="cursor-pointer text-gray-600" />
           </button>
 
           <div className="relative w-full md:w-auto">
-            <Eye className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-600 w-4 h-4" />
+            <Eye className="absolute top-1/2 left-3 h-4 w-4 -translate-y-1/2 text-gray-600" />
 
-            <select className="border-0 outline-0 bg-gray-100 cursor-pointer rounded-md pl-10 pr-10 py-2 text-sm text-black w-full appearance-none z-[9]">
+            <select className="z-[9] w-full cursor-pointer appearance-none rounded-md border-0 bg-gray-100 py-2 pr-10 pl-10 text-sm text-black outline-0">
               <option>Access to</option>
               <option>View Only</option>
               <option>Delete</option>
@@ -159,18 +159,18 @@ export default function FileDetails() {
             </select>
 
             {/* Chevron Down Icon Positioned on the Right */}
-            <ChevronDown className="absolute right-3 top-1/2 -translate-y-1/2 text-gray-500 w-4 h-4 pointer-events-none" />
+            <ChevronDown className="pointer-events-none absolute top-1/2 right-3 h-4 w-4 -translate-y-1/2 text-gray-500" />
           </div>
 
           <div className="relative w-full md:w-auto">
-            <select className="border-0 outline-0 bg-gray-100 cursor-pointer rounded-md px-3 pr-10 py-2 text-sm text-black w-full appearance-none z-[9]">
+            <select className="z-[9] w-full cursor-pointer appearance-none rounded-md border-0 bg-gray-100 px-3 py-2 pr-10 text-sm text-black outline-0">
               <option>Actions</option>
               <option>Delete</option>
               <option>Update</option>
               <option>Active</option>
               <option>Disable</option>
             </select>
-            <ChevronDown className="absolute right-3 top-1/2 -translate-y-1/2 text-gray-500 w-4 h-4 pointer-events-none" />
+            <ChevronDown className="pointer-events-none absolute top-1/2 right-3 h-4 w-4 -translate-y-1/2 text-gray-500" />
           </div>
         </div>
       </div>
