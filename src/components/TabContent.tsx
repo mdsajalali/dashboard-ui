@@ -22,72 +22,110 @@ const TabContent = ({ activeTab }: { activeTab: string }) => {
       {activeTab === "Materials" && (
         <div className="mt-6 bg-white p-4 rounded-md">
           {/* Breadcrumb */}
-          <div className="flex border-b border-black/40 items-center space-x-2 mb-4 flex-wrap gap-5">
-            {breadcrumbItems.map((item) => (
-              <button
-                key={item}
-                className={`text-[16px] px-2   pb-3   border-b-2 ${
-                  breadcrumb === item
-                    ? "border-black  border-b-4 font-semibold"
-                    : "border-transparent text-gray-600"
-                }`}
-                onClick={() => setBreadcrumb(item)}
-              >
-                {item}
-              </button>
-            ))}
-            <div className="flex -mt-2 items-center gap-2">
-              <div className="bg-black p-[2px] rounded-full text-white">
-                <Plus size={16} />
+          <div className="flex border-b border-black/40 items-center justify-between space-x-2 mb-4   gap-5">
+            <div className="flex items-center gap-10">
+              {breadcrumbItems.map((item) => (
+                <button
+                  key={item}
+                  className={`text-[16px] px-2   pb-3   border-b-2 ${
+                    breadcrumb === item
+                      ? "border-black  border-b-4 font-semibold"
+                      : "border-transparent text-gray-600"
+                  }`}
+                  onClick={() => setBreadcrumb(item)}
+                >
+                  {item}
+                </button>
+              ))}
+              <div className="lg:flex hidden -mt-2 items-center gap-2">
+                <div className="bg-black p-[2px] rounded-full text-white">
+                  <Plus size={16} />
+                </div>
+                <h2 className="text-[14px] italic text-gray-400">
+                  Add main Folder
+                </h2>
               </div>
-              <h2 className="text-[14px] italic text-gray-400">
-                Add main Folder
-              </h2>
             </div>
-            <div className="flex items-center gap-5">
-              <div className="relative  ">
+            <div className="lg:flex items-center hidden gap-5">
+              <div className="relative ">
                 <input
                   type="text"
-                  className="pl-10 pr-4 py-1 border outline-0 border-gray-300 rounded-md text-gray-700 focus:outline-none    "
+                  className="pl-6 w-36 text-sm  border outline-0   rounded-lg   focus:outline-none    "
                 />
-                <Search className="absolute left-3 top-1/2 transform -translate-y-1/2 text-gray-500" />
+                <Search
+                  size={16}
+                  className="absolute left-1 top-1/2 transform -translate-y-1/2  "
+                />
               </div>
-              <button className=" w-5 h-5 mt-1 cursor-pointer  border rounded-full">
-                <MoreHorizontal size={19} className="text-gray-600" />
-              </button>
-              <SquarePen />
-              <Trash2 />
-              <svg
-                width="24"
-                height="24"
-                viewBox="0 0 24 24"
-                fill="none"
-                xmlns="http://www.w3.org/2000/svg"
-              >
-                <path
-                  d="M12 3L12 21"
-                  stroke="black"
-                  stroke-width="2"
-                  stroke-linecap="round"
-                />
-                <path
-                  d="M8 7L12 3L16 7"
-                  stroke="black"
-                  stroke-width="2"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                />
-                <path
-                  d="M8 17L12 21L16 17"
-                  stroke="black"
-                  stroke-width="2"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                />
-              </svg>
-              <svg
-                width="24"
-                height="24"
+              <div className="flex items-center gap-2">
+                <button className=" w-5 h-5  cursor-pointer  border rounded-full">
+                  <MoreHorizontal size={19} className="text-gray-600" />
+                </button>
+                <SquarePen size={19} className="  cursor-pointer" />
+              </div>
+              <Trash2 size={19} className="  cursor-pointer" />
+              <div className="flex items-center cursor-pointer">
+                <svg
+                  width="20"
+                  height="20"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M12 3L12 21"
+                    stroke="black"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                  />
+                  <path
+                    d="M8 7L12 3L16 7"
+                    stroke="black"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                  <path
+                    d="M8 17L12 21L16 17"
+                    stroke="black"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+                <svg
+                  className="-ml-2"
+                  width="20"
+                  height="20"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  xmlns="http://www.w3.org/2000/svg"
+                >
+                  <path
+                    d="M12 3L12 21"
+                    stroke="black"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                  />
+                  <path
+                    d="M8 7L12 3L16 7"
+                    stroke="black"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                  <path
+                    d="M8 17L12 21L16 17"
+                    stroke="black"
+                    stroke-width="2"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                  />
+                </svg>
+              </div>
+              <svg className="cursor-pointer"
+                width="20"
+                height="20"
                 viewBox="0 0 24 24"
                 fill="none"
                 xmlns="http://www.w3.org/2000/svg"
