@@ -18,7 +18,8 @@ _Mobile view showcasing responsive design._
 
 - **Header**: Includes a profile dropdown for quick user actions and settings.
 - **Sidebar**: Features a collapsible dropdown menu for seamless navigation.
-- **Delete Button**: Comes with a confirmation modal to prevent accidental deletions.
+- **Delete Button**: Includes a confirmation modal that closes on outside clicks to prevent accidental deletions.
+- **Dynamic Tab Content**: Displays default materials and updates dynamically on tab change.
 - **Main Content**: Displays all content clearly and organized for easy access.
 
 ## Tech Stack
