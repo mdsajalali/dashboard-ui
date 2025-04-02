@@ -5,7 +5,6 @@ import {
   Search,
   MoreHorizontal,
   SquarePen,
-  Trash2,
   ArrowLeft,
   ChevronRight,
   ChevronDown,
@@ -13,6 +12,7 @@ import {
 import FileManagerButtons from "./FileManagerButtons";
 import { useState } from "react";
 import FileDetails from "./FileDetails";
+import ConfirmationModal from "./ConfirmationModal";
 
 const TabContent = ({ activeTab }: { activeTab: string }) => {
   const [breadcrumb, setBreadcrumb] = useState("Content");
@@ -65,7 +65,8 @@ const TabContent = ({ activeTab }: { activeTab: string }) => {
                 </button>
                 <SquarePen size={19} className="  cursor-pointer" />
               </div>
-              <Trash2 size={19} className="  cursor-pointer" />
+              {/* Confirmation Modal */}
+              <ConfirmationModal textColor={true}/>
               <div className="flex items-center cursor-pointer">
                 <svg
                   width="20"

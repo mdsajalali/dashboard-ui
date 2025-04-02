@@ -1,8 +1,9 @@
 import { MainContentProps } from "@/types/main.types";
-import { MoreHorizontal, Trash2, Download } from "lucide-react";
+import { MoreHorizontal, Download } from "lucide-react";
 import CourseSelection from "./CourseSelection";
 import ProgressBar from "./ProgressBar";
 import TabContent from "./TabContent";
+import ConfirmationModal from "./ConfirmationModal";
 
 const tabs: string[] = [
   "Students",
@@ -43,10 +44,8 @@ const MainContent = ({ setActiveTab, activeTab }: MainContentProps) => {
           </button>
         </nav>
         <div className="lg:flex hidden items-center gap-3 -mt-[10px">
-          <Trash2
-            size={20}
-            className="text-gray-500 cursor-pointer hover:text-gray-600"
-          />
+          {/* Confirmation Modal */}
+          <ConfirmationModal />
           <Download
             size={20}
             className="text-gray-500 cursor-pointer hover:text-gray-600"
